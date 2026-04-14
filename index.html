@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Argent</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="card header">
+        <div>
+          <h1>Argent</h1>
+          <p>Suivi simple de votre budget mensuel</p>
+        </div>
+
+        <div class="income-row">
+          <label for="income">Revenu (montant)</label>
+          <input id="income" type="number" min="0" step="0.01" value="2500" />
+        </div>
+
+        <section class="gauge-wrapper" aria-label="Jauge de répartition du revenu">
+          <div class="gauge" id="gauge">
+            <span class="segment charges" id="gauge-charges"></span>
+            <span class="segment epargne" id="gauge-epargne"></span>
+            <span class="segment vie" id="gauge-vie"></span>
+          </div>
+          <ul class="legend">
+            <li><span class="dot charges"></span>% charges: <strong id="pct-charges">0%</strong></li>
+            <li><span class="dot epargne"></span>% épargne: <strong id="pct-epargne">0%</strong></li>
+            <li><span class="dot vie"></span>% vie courante: <strong id="pct-vie">0%</strong></li>
+          </ul>
+        </section>
+      </header>
+
+      <section class="card">
+        <h2>Zone revenu total</h2>
+        <p class="total" id="total-income">2 500,00 €</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Bloc « charges »</h2>
+          <div class="item-grid" id="charges-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Bloc « vie courante »</h2>
+          <div class="item-grid" id="vie-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Bloc « abonnement »</h2>
+          <div class="item-grid" id="abo-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Bloc « épargne »</h2>
+          <div class="savings-row">
+            <span>Restant</span>
+            <strong id="restant">0,00 €</strong>
+          </div>
+          <h3>Wishlist</h3>
+          <div class="item-grid" id="wish-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
